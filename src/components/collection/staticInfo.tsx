@@ -1,8 +1,8 @@
 /*
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 15:46:19
- * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
- * @LastEditTime: 2022-10-12 11:45:02
+ * @LastEditors: weixuefeng weixuefeng@diynova.com
+ * @LastEditTime: 2022-10-13 20:35:18
  * @FilePath: /wave-chinese-website/src/components/collection/staticInfo.tsx
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-08 20:54:29
@@ -47,68 +47,6 @@ function StaticInfo(props) {
           {showAllIntro ? t('COLLAPSE') : t('MORE')}
         </p>
       </div>
-      <p className="title">{t('SPECIFICATTIONS')}</p>
-      {props.collectionInfo.specifications && (
-        <div className="spec-info">
-          <div className="flex">
-            <div className="info-title">
-              <p className="item">{t('CONTRACTADDRESS')}</p>
-              <p className="item">{t('TOKENSTANDARD')}</p>
-              <p className="item">{t('BLOCKCHAIN')}</p>
-              <p className="item">{t('CREATOREARNINGS')}</p>
-            </div>
-            <div className="info-content">
-              <div className="item">
-                <p className="needTruncate">{props.collectionInfo.specifications.contract_address}</p>
-                <img
-                  src="/assets/image/icon-copy.png"
-                  alt=""
-                  className="icon-copy"
-                  onClick={() => copyAddress(props.collectionInfo.specifications.contract_address)}
-                />
-                {/* onClick={copyAddress(props.collectionInfo.specifications.contract_address)} */}
-              </div>
-              <p className="item">{props.collectionInfo.specifications.token_standard}</p>
-              <p className="item">{props.collectionInfo.specifications.block_chain}</p>
-              <div className="item">
-                {props.collectionInfo.specifications.creator_earnings}
-                <img
-                  src="/assets/image/icon-ques.png"
-                  alt=""
-                  className="icon-ques"
-                  onClick={e => showBubble(true, e)}
-                />
-                {/* onClick={showBubble(true)} */}
-                {isShowBubble && (
-                  <div className="bubble">
-                    <img src="/assets/image/bubble.png" alt="" />
-                    <p className="bubble-content">
-                      {t('BUBBLEBEFORE') +
-                        ' ' +
-                        props.collectionInfo.specifications.creator_earnings +
-                        ' ' +
-                        t('BUBBLEAFTER')}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-          <div className="spec-tip">
-            <img src="/assets/image/icon-point.png" alt="" className="icon-point" />
-            {/* className={showAllTips ? '' : 'h-8 line-clamp-2'} */}
-            <p>
-              {t('TIPS')}
-              <a className="more" href="https://www.newtonproject.org/en/evt/">
-                {t('MORE')}
-              </a>
-            </p>
-            {/* <p className="more" onClick={changeShowAllTips}>
-              {showAllTips ? t('COLLAPSE') : t('MORE')}
-            </p> */}
-          </div>
-        </div>
-      )}
     </div>
   )
 }
