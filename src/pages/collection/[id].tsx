@@ -1,8 +1,8 @@
 /*
  * @Author: liukeke liukeke@diynova.com
  * @Date: 2022-09-21 10:43:33
- * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
- * @LastEditTime: 2022-10-13 16:23:40
+ * @LastEditors: weixuefeng weixuefeng@diynova.com
+ * @LastEditTime: 2022-10-13 20:50:41
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
  * @LastEditTime: 2022-10-13 14:53:40
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
@@ -291,8 +291,8 @@ function Main(props) {
           isInApp={isInApp}
           addToCalendar={() => requestAddCalendar()}
           payOrder={() => requestPayOrder()}
-          gotoTrade={() => gotoTrade()}
-          gotoAssets={() => gotoAssets()}
+          // gotoTrade={() => gotoTrade()}
+          // gotoAssets={() => gotoAssets()}
         />
       </div>
     )

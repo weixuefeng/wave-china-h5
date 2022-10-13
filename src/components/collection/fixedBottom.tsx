@@ -2,7 +2,7 @@
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 16:09:48
  * @LastEditors: weixuefeng weixuefeng@diynova.com
- * @LastEditTime: 2022-10-13 20:37:03
+ * @LastEditTime: 2022-10-13 20:51:15
  * @FilePath: /wave-chinese-website/src/components/collection/fixedBottom.tsx
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-09 17:02:42
@@ -50,8 +50,8 @@ function fixedBottom(props) {
         )
       } else if (collectionInfo.sell_status == 2) {
         return (
-          <div className="button" onClick={props.collectionInfo.is_boughtGo ? gotoAssets : gotoTrade}>
-            {props.collectionInfo.is_boughtGo ? t('CHECKMYASSETS') : t('GOTOTRADE')}
+          <div className="button">
+            已售罄
           </div>
         )
       }
