@@ -2,7 +2,7 @@
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 16:09:48
  * @LastEditors: weixuefeng weixuefeng@diynova.com
- * @LastEditTime: 2022-10-13 19:24:58
+ * @LastEditTime: 2022-10-13 20:37:03
  * @FilePath: /wave-chinese-website/src/components/collection/fixedBottom.tsx
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-09 17:02:42
@@ -65,7 +65,7 @@ function fixedBottom(props) {
   }
 
   function gotoDownLoad() {
-    window.open('https://app.waveuniverse.org')
+    window.open('http://waveplatform.com.cn/')
   }
 
   // return saleStatusChange()
