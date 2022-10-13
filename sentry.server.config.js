@@ -3,6 +3,6 @@ import * as Sentry from '@sentry/nextjs';
 const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
 
 Sentry.init({
-  dsn: SENTRY_DSN || 'https://849e851f5afb43e08a3f0c1f3b6c30ca@o4503965640097792.ingest.sentry.io/4503965641736192',
+  dsn: SENTRY_DSN || 'https://7df88ea71c034b24a90a26ea078b3d09@o460544.ingest.sentry.io/4503976057896960',
   tracesSampleRate: 1.0,
 });
