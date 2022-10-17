@@ -1,8 +1,8 @@
 /*
  * @Author: liukeke liukeke@diynova.com
  * @Date: 2022-09-21 10:43:33
- * @LastEditors: weixuefeng weixuefeng@diynova.com
- * @LastEditTime: 2022-10-13 20:50:41
+ * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
+ * @LastEditTime: 2022-10-17 13:45:57
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
  * @LastEditTime: 2022-10-13 14:53:40
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
@@ -285,6 +285,13 @@ function Main(props) {
           <span className="title">{t('LICENSE')}</span>
           <img src="/assets/image/icon-arrow.png" alt="" />
         </a> }
+        <div className="staticinfo-wrap">
+          <p className="title">{t('NOTICE')}</p>
+          <div className="content-wrap">
+            <p className="text-gray666">{t('NOTICE_CONTENT')}</p>
+          </div>
+        </div>
+        <div className="pb-24"></div>
         <FixBottom
           hasAddCalendar={hasAddCalendar}
           collectionInfo={collectionInfo}
