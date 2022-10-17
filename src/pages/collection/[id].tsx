@@ -1,13 +1,13 @@
 /*
  * @Author: liukeke liukeke@diynova.com
  * @Date: 2022-09-21 10:43:33
- * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
- * @LastEditTime: 2022-10-17 13:45:57
+ * @LastEditors: weixuefeng weixuefeng@diynova.com
+ * @LastEditTime: 2022-10-17 14:24:49
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
  * @LastEditTime: 2022-10-13 14:53:40
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
  * @LastEditTime: 2022-10-13 13:16:49
- * @FilePath: /wave-chinese-website/src/pages/collection/[id].tsx
+ * @FilePath: /wave-china-h5/src/pages/collection/[id].tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import HeadImg from 'components/collection/headImg'
@@ -29,8 +29,8 @@ import { IS_DEBUG } from 'constants/settings'
 export default Home
 
 function Home() {
-  const [title, setTitle] = useState('Collection')
-  let pageModel = new PageModel(title, 'WAVE', '')
+  const [title, setTitle] = useState('数字藏品')
+  let pageModel = new PageModel(title, '浪潮', '')
   return <>{NormalLayout(<Main setTitle={setTitle} />, pageModel)}</>
 }
 
