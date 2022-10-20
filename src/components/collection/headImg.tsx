@@ -1,8 +1,8 @@
 /*
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 15:46:19
- * @LastEditors: weixuefeng weixuefeng1018@gmail.com
- * @LastEditTime: 2022-10-13 14:19:40
+ * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
+ * @LastEditTime: 2022-10-20 16:24:03
  * @FilePath: /wave-chinese-website/src/components/collection/headImg.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -26,14 +26,21 @@ function HeadImg(props) {
       if (timer) {
         clearInterval(timer)
       }
-      countDown()
+      countDown(remainTime)
+    }
+    return () => {
+      clearInterval(timer)
     }
   }, [])
 
-  function countDown() {
+  function countDown(startTime) {
+    let countDownTime = startTime
     timer = setInterval(() => {
-      remainTime = remainTime - 1
-      setRemainSecond(remainTime)
+      if(countDownTime > 1){
+        setRemainSecond(-- countDownTime)
+      } else {
+        clearInterval(timer)
+      }
     }, 1000)
   }
 
