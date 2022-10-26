@@ -1,8 +1,8 @@
 /*
  * @Author: liukeke liukeke@diynova.com
  * @Date: 2022-09-21 10:43:33
- * @LastEditors: weixuefeng weixuefeng@diynova.com
- * @LastEditTime: 2022-10-26 20:52:22
+ * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
+ * @LastEditTime: 2022-10-26 21:26:07
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
  * @LastEditTime: 2022-10-13 14:53:40
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
@@ -73,6 +73,9 @@ function Main(props) {
         const res = await postRequest(collectionUrl, params)
         if (res.status == 200 && res.data.error_code == 1) {
           const info = res.data.result
+          if(JSON.stringify(info.specifications) == '{}'){
+            info.specifications = null
+          }
           setCollectionInfo(info)
           setTitle(info.name)
           initCalendarInfo(info)
@@ -207,6 +210,9 @@ function Main(props) {
     postMessage(params, function (data) {
       if (data != null) {
         const info = JSON.parse(data.result)
+        if(JSON.stringify(info.specifications) == '{}'){
+          info.specifications = null
+        }
         setTitle(info.name)
         setCollectionInfo(info)
         initCalendarInfo(info)
