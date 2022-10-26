@@ -2,7 +2,7 @@
  * @Author: liukeke liukeke@diynova.com
  * @Date: 2022-09-21 10:43:33
  * @LastEditors: weixuefeng weixuefeng@diynova.com
- * @LastEditTime: 2022-10-17 14:24:49
+ * @LastEditTime: 2022-10-26 20:52:22
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
  * @LastEditTime: 2022-10-13 14:53:40
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
@@ -220,7 +220,7 @@ function Main(props) {
       description: collectionInfo.description,
       eventLocation: 'Wave',
       start_time: collectionInfo.sell_start_time,
-      end_time: collectionInfo.reveals_time,
+      end_time: collectionInfo.sell_start_time + 86400,
       advanceTime: 10,
       rule: 'null',
       collection_id: collectionInfo.id,
