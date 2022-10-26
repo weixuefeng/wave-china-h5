@@ -2,7 +2,7 @@
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 15:46:19
  * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
- * @LastEditTime: 2022-10-26 20:58:03
+ * @LastEditTime: 2022-10-26 21:14:02
  * @FilePath: /wave-china-h5/src/components/collection/staticInfo.tsx
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-08 20:54:29
@@ -51,7 +51,7 @@ function StaticInfo(props) {
         </p>
       </div>
       <p className="title">{t('SPECIFICATTIONS')}</p>
-      {props.collectionInfo.specifications && (
+      {JSON.stringify(props.collectionInfo.specifications) == '{}' && (
         <div className="spec-info">
           <div className="flex">
             <div className="info-title">
