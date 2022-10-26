@@ -1,8 +1,8 @@
 /*
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 16:09:48
- * @LastEditors: weixuefeng weixuefeng@diynova.com
- * @LastEditTime: 2022-10-13 20:51:15
+ * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
+ * @LastEditTime: 2022-10-26 20:59:55
  * @FilePath: /wave-chinese-website/src/components/collection/fixedBottom.tsx
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-09 17:02:42
@@ -20,9 +20,9 @@ function fixedBottom(props) {
 
   function textStatus() {
     if (collectionInfo.sell_status == 2) {
-      return <div className="statusInfo end">¥ {collectionInfo.sell_price}</div>
+      return <div className="statusInfo end">¥ {Number(collectionInfo.sell_price)}</div>
     } else {
-      return <div className="statusInfo">¥ {collectionInfo.sell_price}</div>
+      return <div className="statusInfo">¥ {Number(collectionInfo.sell_price)}</div>
     }
   }
   function buttonStatus() {

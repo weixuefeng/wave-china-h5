@@ -1,8 +1,8 @@
 /*
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 15:46:19
- * @LastEditors: weixuefeng weixuefeng@diynova.com
- * @LastEditTime: 2022-10-17 14:44:03
+ * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
+ * @LastEditTime: 2022-10-26 20:58:03
  * @FilePath: /wave-china-h5/src/components/collection/staticInfo.tsx
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-08 20:54:29
@@ -38,6 +38,9 @@ function StaticInfo(props) {
     }
     setIsShowBubble(val)
   }
+  function dealWithAdd(str){
+    return str.substring(0,6) + '...' + str.substr(-7)
+  }
   return (
     <div className="staticinfo-wrap" onClick={e => showBubble(false, e)}>
       <p className="title introduction">{t('INTRODUCTION')}</p>
@@ -52,14 +55,14 @@ function StaticInfo(props) {
         <div className="spec-info">
           <div className="flex">
             <div className="info-title">
-              <p className="item">{t('CONTRACTADDRESS')}</p>
-              <p className="item">{t('TOKENSTANDARD')}</p>
-              <p className="item">{t('BLOCKCHAIN')}</p>
-              <p className="item">{t('CREATOREARNINGS')}</p>
+              {props.collectionInfo.specifications.contract_address && <p className="item">{t('CONTRACTADDRESS')}</p>}
+              {props.collectionInfo.specifications.token_standard && <p className="item">{t('TOKENSTANDARD')}</p>}
+              {props.collectionInfo.specifications.block_chain && <p className="item">{t('BLOCKCHAIN')}</p>}
+              {props.collectionInfo.specifications.creator_earnings && <p className="item">{t('CREATOREARNINGS')}</p>}
             </div>
             <div className="info-content">
-              <div className="item">
-                <p className="needTruncate">{props.collectionInfo.specifications.contract_address}</p>
+            {props.collectionInfo.specifications.contract_address && <div className="item">
+                <p className="needTruncate">{dealWithAdd(props.collectionInfo.specifications.contract_address)}</p>
                 <img
                   src="/assets/image/icon-copy.png"
                   alt=""
@@ -67,10 +70,10 @@ function StaticInfo(props) {
                   onClick={() => copyAddress(props.collectionInfo.specifications.contract_address)}
                 />
                 {/* onClick={copyAddress(props.collectionInfo.specifications.contract_address)} */}
-              </div>
-              <p className="item">{props.collectionInfo.specifications.token_standard}</p>
-              <p className="item">{props.collectionInfo.specifications.block_chain}</p>
-              <div className="item">
+              </div>}
+              {props.collectionInfo.specifications.token_standard && <p className="item">{props.collectionInfo.specifications.token_standard}</p>}
+              {props.collectionInfo.specifications.block_chain && <p className="item">{props.collectionInfo.specifications.block_chain}</p>}
+              {props.collectionInfo.specifications.creator_earnings && <div className="item">
                 {props.collectionInfo.specifications.creator_earnings}
                 <img
                   src="/assets/image/icon-ques.png"
@@ -91,7 +94,7 @@ function StaticInfo(props) {
                     </p>
                   </div>
                 )}
-              </div>
+              </div>}
             </div>
           </div>
           <div className="spec-tip">
