@@ -2,7 +2,7 @@
  * @Author: error: git config user.name && git config user.email & please set dead value or install git
  * @Date: 2022-10-08 11:55:00
  * @LastEditors: weixuefeng weixuefeng@diynova.com
- * @LastEditTime: 2022-10-24 15:00:04
+ * @LastEditTime: 2022-10-26 21:14:44
  * @FilePath: /wave-china-h5/src/pages/api/collection.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -17,7 +17,7 @@ type Data = {
   country: string
 }
 
-const url = `${WAVE_BASE_URL}/api/v6/nft/mystery-box/detail`
+const url = `${WAVE_BASE_URL}/gate/v6/nft/mystery-box/detail`
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   axios
