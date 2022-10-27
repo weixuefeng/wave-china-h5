@@ -103,9 +103,9 @@ function StaticInfo(props) {
           {/* className={showAllTips ? '' : 'h-8 line-clamp-2'} */}
           <p>
             {t('TIPS')}
-            <a className="more" href="https://www.newtonproject.org/en/evt/">
+            {/* <a className="more" href="https://www.newtonproject.org/en/evt/">
               {t('MORE')}
-            </a>
+            </a> */}
           </p>
           {/* <p className="more" onClick={changeShowAllTips}>
             {showAllTips ? t('COLLAPSE') : t('MORE')}
