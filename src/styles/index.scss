@@ -3,7 +3,7 @@
   .head-img {
     @apply relative p-4 text-white;
     .time-onimg {
-      @apply absolute left-6 top-7 rounded-[0.25rem] bg-black p-2 text-base;
+      @apply absolute left-6 top-7 rounded-[0.25rem] bg-black p-2 text-base bg-opacity-60;
     }
     .status-onimg {
       @apply absolute  left-6 bottom-7  rounded-[0.25rem] bg-black bg-opacity-30 px-2 py-1 text-xs;
@@ -44,7 +44,7 @@
       @apply mb-3;
     }
     .content-wrap {
-      @apply text-sm leading-6;
+      @apply text-sm leading-6 text-gray666;
       // .content {
       //   @apply h-10 text-gray666 line-clamp-2;
       // }
