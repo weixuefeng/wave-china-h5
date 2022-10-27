@@ -2,7 +2,7 @@
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 15:46:19
  * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
- * @LastEditTime: 2022-10-26 21:32:15
+ * @LastEditTime: 2022-10-27 11:06:41
  * @FilePath: /wave-china-h5/src/components/collection/staticInfo.tsx
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-08 20:54:29
@@ -54,7 +54,9 @@ function StaticInfo(props) {
       {props.collectionInfo.specifications && <p className="title">{t('SPECIFICATTIONS')}</p>}
       <div className="spec-info">
         <div className="flex">
-        {props.collectionInfo && props.collectionInfo.specifications && (<>
+        {props.collectionInfo && props.collectionInfo.specifications && 
+        (props.collectionInfo.specifications.contract_address || props.collectionInfo.specifications.token_standard || props.collectionInfo.specifications.block_chain || props.collectionInfo.specifications.creator_earnings) &&
+        (<>
           <div className="info-title">
             {props.collectionInfo.specifications.contract_address && <p className="item">{t('CONTRACTADDRESS')}</p>}
             {props.collectionInfo.specifications.token_standard && <p className="item">{t('TOKENSTANDARD')}</p>}
