@@ -2,7 +2,7 @@
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 15:46:19
  * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
- * @LastEditTime: 2022-10-27 11:06:41
+ * @LastEditTime: 2022-10-27 12:00:31
  * @FilePath: /wave-china-h5/src/components/collection/staticInfo.tsx
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-08 20:54:29
@@ -83,7 +83,6 @@ function StaticInfo(props) {
                         className="icon-copy"
                         onClick={() => copyAddress(props.collectionInfo.specifications.contract_address)}
                       />
-                      {/* onClick={copyAddress(props.collectionInfo.specifications.contract_address)} */}
                     </div>
                   )}
                   {props.collectionInfo.specifications.token_standard && (
