@@ -73,7 +73,7 @@ function Main(props) {
         const res = await postRequest(collectionUrl, params)
         if (res.status == 200 && res.data.error_code == 1) {
           const info = res.data.result
-          if(JSON.stringify(info.specifications) == '{}'){
+          if (JSON.stringify(info.specifications) == '{}') {
             info.specifications = null
           }
           console.log(info.specifications)
@@ -211,7 +211,7 @@ function Main(props) {
     postMessage(params, function (data) {
       if (data != null) {
         const info = JSON.parse(data.result)
-        if(JSON.stringify(info.specifications) == '{}'){
+        if (JSON.stringify(info.specifications) == '{}') {
           info.specifications = null
         }
         setTitle(info.name)
@@ -286,12 +286,14 @@ function Main(props) {
         <BaseInfo collectionInfo={collectionInfo} />
         <StaticInfo collectionInfo={collectionInfo}></StaticInfo>
         <div className="staticinfo-wrap">
-          <img className="rounded-xl w-full" src={collectionInfo.picture_description} alt="" />
+          <img className="w-full rounded-xl" src={collectionInfo.picture_description} alt="" />
         </div>
-        { collectionInfo.license_url && <a className="staticinfo-wrap license" href={collectionInfo.license_url}>
-          <span className="title">{t('LICENSE')}</span>
-          <img src="/assets/image/icon-arrow.png" alt="" />
-        </a> }
+        {collectionInfo.license_url && (
+          <a className="staticinfo-wrap license" href={collectionInfo.license_url}>
+            <span className="title">{t('LICENSE')}</span>
+            <img src="/assets/image/icon-arrow.png" alt="" />
+          </a>
+        )}
         <div className="staticinfo-wrap">
           <p className="title">{t('NOTICE')}</p>
           <div className="content-wrap">

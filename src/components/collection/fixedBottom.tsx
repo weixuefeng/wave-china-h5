@@ -49,11 +49,7 @@ function fixedBottom(props) {
           </div>
         )
       } else if (collectionInfo.sell_status == 2) {
-        return (
-          <div className="button">
-            已售罄
-          </div>
-        )
+        return <div className="button">已售罄</div>
       }
     } else {
       return (

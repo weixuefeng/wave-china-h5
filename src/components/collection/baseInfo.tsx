@@ -15,9 +15,7 @@ function BaseInfo(props) {
   let { collectionInfo } = props
   return (
     <div className="baseinfo-wrap">
-      <p className="title">
-        {collectionInfo.name}
-      </p>
+      <p className="title">{collectionInfo.name}</p>
       <div className="nums">
         <div className="nums-item">
           <span className="tip">{t('REMAINING')}</span>

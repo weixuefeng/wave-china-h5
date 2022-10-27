@@ -36,8 +36,8 @@ function HeadImg(props) {
   function countDown(startTime) {
     let countDownTime = startTime
     timer = setInterval(() => {
-      if(countDownTime > 1){
-        setRemainSecond(-- countDownTime)
+      if (countDownTime > 1) {
+        setRemainSecond(--countDownTime)
       } else {
         clearInterval(timer)
       }
@@ -76,7 +76,7 @@ function HeadImg(props) {
         return <></>
       }
     } else {
-      if(collectionInfo.reveals_time > 0) {
+      if (collectionInfo.reveals_time > 0) {
         return <div className="time-onimg">{t('REVEALSAT') + ' ' + getTimeStr(collectionInfo.reveals_time)}</div>
       } else {
         return <></>
