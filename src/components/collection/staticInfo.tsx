@@ -1,8 +1,8 @@
 /*
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 15:46:19
- * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
- * @LastEditTime: 2022-10-27 13:36:48
+ * @LastEditors: zxt0805 zhuxiaotong@diynova.com
+ * @LastEditTime: 2022-10-28 17:37:05
  * @FilePath: /wave-china-h5/src/components/collection/staticInfo.tsx
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-08 20:54:29
@@ -20,6 +20,7 @@ export default StaticInfo
 function StaticInfo(props) {
   const [showAllIntro, setShowAllIntro] = useState(false)
   const [isShowBubble, setIsShowBubble] = useState(false)
+  const [isShowToast, setIsShowToast] = useState(false)
 
   function changeShowAllIntro() {
     setShowAllIntro(!showAllIntro)
@@ -29,7 +30,9 @@ function StaticInfo(props) {
   }
   function copyAddress(str) {
     copy(str)
-    message.success(t('COPYSUCCESS'))
+    setIsShowToast(true)
+    setTimeout(() => {setIsShowToast(false)}, 300)
+    // message.success(t('COPYSUCCESS'))
   }
   function showBubble(val, event) {
     event = event || window.event
@@ -43,6 +46,7 @@ function StaticInfo(props) {
   }
 
   return (
+    <>
     <div className="staticinfo-wrap" onClick={e => showBubble(false, e)}>
       <p className="title introduction">{t('INTRODUCTION')}</p>
       <div className="content-wrap">
@@ -51,6 +55,7 @@ function StaticInfo(props) {
           {showAllIntro ? t('COLLAPSE') : t('MORE')}
         </p>
       </div>
+      <div className="mt-7">
       {props.collectionInfo.specifications &&
             (props.collectionInfo.specifications.contract_address ||
               props.collectionInfo.specifications.token_standard ||
@@ -137,6 +142,12 @@ function StaticInfo(props) {
           </p> */}
         </div>
       </div>
+      </div>
     </div>
+    {isShowToast && <div className="toast">
+      <img className="copied" src="/assets/image/copied.png" />
+      {t('COPYSUCCESS')}
+    </div>}
+    </>
   )
 }

@@ -123,6 +123,13 @@
   .more {
     @apply font-semibold text-gray333;
   }
+  .toast{
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 py-2 px-4 bg-white rounded-full text-sm flex;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.08);
+    .copied{
+      @apply w-6 h-6 mr-1;
+    }
+  }
 }
 
 .license-wrap {
