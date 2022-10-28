@@ -1,8 +1,8 @@
 /*
  * @Author: liukeke liukeke@diynova.com
  * @Date: 2022-09-21 10:43:33
- * @LastEditors: weixuefeng weixuefeng@diynova.com
- * @LastEditTime: 2022-10-27 17:58:03
+ * @LastEditors: zxt0805 zhuxiaotong@diynova.com
+ * @LastEditTime: 2022-10-28 18:01:23
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
  * @LastEditTime: 2022-10-13 14:53:40
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
@@ -29,13 +29,15 @@ import { IS_DEBUG } from 'constants/settings'
 export default Home
 
 function Home() {
-  const [title, setTitle] = useState('数字藏品')
-  let pageModel = new PageModel(title, '浪潮', '')
-  return <>{NormalLayout(<Main setTitle={setTitle} />, pageModel)}</>
+  const [title, setTitle] = useState('浪潮')
+  const [desc, setDesc] = useState('专注于电影、音乐等数字资产，为创作家赋能')
+  const [image, setImage] = useState('https://ipfs.wavemall.io/ipfs/QmVtA3LpMUKMoJzt8t28k2eLszomqWkZmBzc8ZQGLpDRg9')
+  let pageModel = new PageModel(title, desc, '', image)
+  return <>{NormalLayout(<Main setTitle={setTitle} setDesc={setDesc} setImage={setImage} />, pageModel)}</>
 }
 
 function Main(props) {
-  const { setTitle } = props
+  const { setTitle, setDesc, setImage } = props
   const { t, i18n } = useTranslation()
   const isDebug = IS_DEBUG == 'true' ? true : false
   const router = useRouter()
@@ -219,7 +221,6 @@ function Main(props) {
         if (JSON.stringify(info.specifications) == '{}') {
           info.specifications = null
         }
-        setTitle(info.name)
         setCollectionInfo(info)
         initCalendarInfo(info)
       }
@@ -227,6 +228,9 @@ function Main(props) {
   }
 
   function initCalendarInfo(collectionInfo) {
+    setTitle(collectionInfo.name)
+    setDesc(collectionInfo.description)
+    setImage(collectionInfo.image)
     const info = {
       title: t('WAVE_PLATFORM_EVT') + ` [${collectionInfo.name}] ` + t('COMMINIG_SOON'),
       description: collectionInfo.description,

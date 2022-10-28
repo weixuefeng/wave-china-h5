@@ -2,7 +2,7 @@
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 15:46:19
  * @LastEditors: zxt0805 zhuxiaotong@diynova.com
- * @LastEditTime: 2022-10-28 17:49:22
+ * @LastEditTime: 2022-10-28 17:55:19
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-27 20:20:16
  * @FilePath: /wave-china-h5/src/components/collection/staticInfo.tsx
@@ -131,10 +131,10 @@ function StaticInfo(props) {
             )}
         </div>
         <div className="spec-tip">
-          {/* <img src="/assets/image/icon-point.png" alt="" className="icon-point" /> */}
+          <img src="/assets/image/icon-point.png" alt="" className="icon-point" />
           {/* className={showAllTips ? '' : 'h-8 line-clamp-2'} */}
           <p>
-            {/* {t('TIPS')} */}
+            {t('TIPS')}
             {/* <a className="more" href="https://www.newtonproject.org/en/evt/">
               {t('MORE')}
             </a> */}
