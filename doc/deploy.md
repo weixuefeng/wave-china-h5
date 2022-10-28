@@ -14,7 +14,7 @@ npm install -g pm2
 ```
 yarn
 yarn build
-pm2 start npm --name "wave-chinese-website" -- start
+pm2 start npm --name "wave-china-page" -- start
 ```
 
 ### 更新部署:
@@ -22,7 +22,7 @@ pm2 start npm --name "wave-chinese-website" -- start
 git pull
 yarn
 yarn build
-pm2 restart wave-chinese-website
+pm2 restart wave-china-page
 ```
 
 ### 如需更新启动端口，
@@ -31,8 +31,8 @@ pm2 restart wave-chinese-website
 ### nginx 配置:
 ```
 server {
-    server_name waveplatform.com.cn;
-    access_log    /var/log/nginx/flower.newb.club.access.log;
+    server_name page.waveplatform.com.cn;
+    access_log    /var/log/nginx/page.waveplatform.com.cn.log;
     location / {
         proxy_pass http://127.0.0.1:8001;
     }

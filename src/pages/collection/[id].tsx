@@ -1,8 +1,8 @@
 /*
  * @Author: liukeke liukeke@diynova.com
  * @Date: 2022-09-21 10:43:33
- * @LastEditors: zhuxiaotong zhuxiaotong@diynova.com
- * @LastEditTime: 2022-10-27 10:50:46
+ * @LastEditors: weixuefeng weixuefeng@diynova.com
+ * @LastEditTime: 2022-10-27 17:58:03
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
  * @LastEditTime: 2022-10-13 14:53:40
  * @LastEditors: weixuefeng weixuefeng1018@gmail.com
@@ -48,6 +48,7 @@ function Main(props) {
   const [collectionInfo, setCollectionInfo] = useState<CollectionInfo>()
   const [calendarInfo, setCalendarInfo] = useState({})
   const [hasAddCalendar, setHasAddCalendar] = useState(false)
+  const [refreshFlag, setRefreshFlag] = useState(Date.now())
 
   const collectionUrl = '/api/collection'
 
@@ -58,7 +59,7 @@ function Main(props) {
         fetchCollectionInfo(flag)
       }, 500)
     }
-  }, [id])
+  }, [id, refreshFlag])
 
   function fetchCollectionInfo(flag) {
     if (flag) {
@@ -153,18 +154,22 @@ function Main(props) {
   }
 
   function requestPayOrder() {
+    let address = ""
+    if(collectionInfo.specifications) {
+      address = collectionInfo.specifications.contract_address;
+    }
     let params = {
       name: 'requestPayOrder',
       data: {
         collection_id: collectionInfo.id.toString(),
         price: collectionInfo.sell_price,
-        to_address: collectionInfo.specifications.contract_address,
+        to_address: address,
       },
     }
 
     postMessage(params, function (data) {
       console.debug('\r\n requestPayOrder: ' + JSON.stringify(data))
-
+      setRefreshFlag(Date.now())
       if (data != null) {
         console.log(JSON.stringify(data))
       }
