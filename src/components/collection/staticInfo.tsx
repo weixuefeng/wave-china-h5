@@ -2,7 +2,7 @@
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 15:46:19
  * @LastEditors: zxt0805 zhuxiaotong@diynova.com
- * @LastEditTime: 2022-10-28 17:38:53
+ * @LastEditTime: 2022-10-28 17:49:22
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-27 20:20:16
  * @FilePath: /wave-china-h5/src/components/collection/staticInfo.tsx
@@ -33,7 +33,7 @@ function StaticInfo(props) {
   function copyAddress(str) {
     copy(str)
     setIsShowToast(true)
-    setTimeout(() => {setIsShowToast(false)}, 300)
+    setTimeout(() => {setIsShowToast(false)}, 3000)
     // message.success(t('COPYSUCCESS'))
   }
   function showBubble(val, event) {
