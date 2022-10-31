@@ -1,8 +1,8 @@
 /*
  * @Author: zhuxiaotong zhuxiaotong@diynova.com
  * @Date: 2022-09-29 15:46:19
- * @LastEditors: zxt0805 zhuxiaotong@diynova.com
- * @LastEditTime: 2022-10-28 17:55:19
+ * @LastEditors: weixuefeng weixuefeng@diynova.com
+ * @LastEditTime: 2022-10-31 14:26:18
  * @LastEditors: weixuefeng weixuefeng@diynova.com
  * @LastEditTime: 2022-10-27 20:20:16
  * @FilePath: /wave-china-h5/src/components/collection/staticInfo.tsx
@@ -52,7 +52,7 @@ function StaticInfo(props) {
     <div className="staticinfo-wrap" onClick={e => showBubble(false, e)}>
       <p className="title introduction">{t('INTRODUCTION')}</p>
       <div className="content-wrap">
-        <p className={showAllIntro ? '' : 'h-[3rem] text-gray666 line-clamp-2'}>{props.collectionInfo.description}</p>
+      <p className={showAllIntro ? 'whitespace-pre-wrap' : 'whitespace-pre-wrap h-[3rem] text-gray666 line-clamp-2 '}>{props.collectionInfo.description}</p>
         <p className="more" onClick={changeShowAllIntro}>
           {showAllIntro ? t('COLLAPSE') : t('MORE')}
         </p>
