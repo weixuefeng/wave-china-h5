@@ -88,7 +88,7 @@
       .spec-tip {
         @apply relative pl-[0.625rem] text-xs leading-5 text-gray999;
         .icon-point {
-          @apply absolute left-0 top-1 h-[0.375rem] w-[0.375rem];
+          @apply absolute left-0 top-[0.4rem] h-[0.375rem] w-[0.375rem];
         }
         // p {
         //   @apply h-8 line-clamp-2;
